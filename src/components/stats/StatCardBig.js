@@ -7,7 +7,7 @@ const StatCardBig = props => {
                 <h3 className="font-bold text-gray-400 text-xl">
                     {props.text}
                 </h3>
-                <h1 className="font-bold text-white text-7xl h-min">
+                <h1 className="font-bold text-white text-5xl h-min">
                     {props.value}
                 </h1>
             </div>
