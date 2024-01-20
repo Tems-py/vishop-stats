@@ -2,14 +2,9 @@ import React from "react";
 import { useState } from "react";
 
 const InputToken = props => {
-    const [token, setToken] = useState(null);
-    function handleChange(event) {
-        setToken(event.target.value);
-    }
-
     function handleSubmit(event) {
         event.preventDefault();
-        props.setToken(token);
+        props.setToken(event.target.elements.token.value);
     }
 
     return (
@@ -20,9 +15,8 @@ const InputToken = props => {
             <input
                 type="text"
                 placeholder="Wklej token vishop"
-                onChange={handleChange}
-                value={token}
                 className="bg-stone-400 p-1.5 rounded-md text-black placeholder:text-black"
+                name="token"
             />
             <input
                 type="submit"
