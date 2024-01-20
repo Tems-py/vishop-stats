@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const ChooseShop = props => {
     return (
-        <div className="flex flex-row gap-3">
+        <div className="flex flex-row gap-3 flex-wrap p-4">
             {props.shops.map(shop => (
                 <div
                     key={shop.id}

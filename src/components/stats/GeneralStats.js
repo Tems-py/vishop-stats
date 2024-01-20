@@ -16,7 +16,7 @@ const GeneralStats = props => {
     const playersUnique = [...new Set(players)];
 
     return (
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row gap-5 flex-wrap">
             <StatCardBig text="Zarobiono" value={earnings.toFixed(2) + "zł"} />
             <StatCardBig text="Ilość transakcji" value={data.length} />
             <StatCardBig
