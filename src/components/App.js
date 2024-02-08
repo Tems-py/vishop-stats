@@ -8,6 +8,7 @@ import "./App.css";
 function App() {
     const [token, setToken] = useState(null);
     const [data, setData] = useState([]);
+    const [products, setProducts] = useState([]);
     const [shops, setShops] = useState(null);
     const [shop, setShop] = useState(null);
 
@@ -78,6 +79,17 @@ function App() {
                 });
         };
         fetchPage();
+
+        axios
+            .get(`https://dev123.vishop.pl/panel/shops/${shop}/products/`, {
+                headers: {
+                    Authorization: token
+                }
+            })
+            .then(response => {
+                setProducts(response.data);
+                console.log(response.data);
+            });
     }
 
     return (
@@ -86,7 +98,9 @@ function App() {
             {token !== null && shops !== null && shop == null && (
                 <ChooseShop shops={shops} setshop={setshop} />
             )}
-            {shop !== null && <Stats data={data} />}
+            {shop !== null && data.length !== 0 && (
+                <Stats data={data} products={products} />
+            )}
         </div>
     );
 }

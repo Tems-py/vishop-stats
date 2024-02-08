@@ -7,7 +7,7 @@ const Stats = props => {
 
     return (
         <div className="w-[95%] h-[95%] bg-slate-500 p-3 rounded-md mb-5 flex flex-col gap-3">
-            <GeneralStats data={data} />
+            <GeneralStats data={data} products={props.products} />
             <ProductsBought data={data} />
         </div>
     );

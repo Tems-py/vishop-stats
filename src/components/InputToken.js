@@ -10,7 +10,7 @@ const InputToken = props => {
     return (
         <form
             onSubmit={handleSubmit}
-            className="w-max h-max bg-slate-500 p-5 rounded-md shadow-2xl text-black flex flex-col justify-center items-center gap-3"
+            className="w-max h-max bg-blue-500 p-5 rounded-md shadow-2xl text-black flex flex-col justify-center items-center gap-3"
         >
             <input
                 type="text"

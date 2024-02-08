@@ -19,9 +19,6 @@ const ProductsBought = props => {
         }
     });
 
-    console.log(products);
-    console.log(productsData);
-
     return (
         <div className="flex flex-col gap-1 overflow-auto">
             {Object.keys(products)
