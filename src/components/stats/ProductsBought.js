@@ -20,7 +20,7 @@ const ProductsBought = props => {
     });
 
     return (
-        <div className="flex flex-col gap-1 overflow-auto">
+        <div className="flex flex-col gap-1 overflow-auto h-[1000px]">
             {Object.keys(products)
                 .sort((a, b) => products[b] - products[a])
                 .map((key, i) => (
