@@ -7,7 +7,7 @@ const ChooseShop = props => {
                 <div
                     key={shop.id}
                     shopid={shop.id}
-                    className="bg-slate-300 p-3 rounded-md hover:bg-slate-400"
+                    className="bg-violet-600 p-3 rounded-md hover:bg-violet-400 text-lg font-bold cursor-pointer text-violet-50"
                     onClick={props.setshop}
                 >
                     {shop.name}

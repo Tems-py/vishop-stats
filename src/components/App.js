@@ -50,21 +50,18 @@ function App() {
         console.log(`fetching data from ${shop} using ${token}}`);
         const fetchPage = () => {
             axios
-                .get(
-                    `https://dev123.vishop.pl/panel/shops/${shop}/payments_history/`,
-                    {
-                        params: {
-                            page: page.toString(),
-                            search: "",
-                            ordering: "-created_at",
-                            exclude_status: "waiting",
-                            server: ""
-                        },
-                        headers: {
-                            Authorization: token
-                        }
+                .get(`https://dev123.vishop.pl/panel/shops/${shop}/payments_history/`, {
+                    params: {
+                        page: page.toString(),
+                        search: "",
+                        ordering: "-created_at",
+                        exclude_status: "waiting",
+                        server: ""
+                    },
+                    headers: {
+                        Authorization: token
                     }
-                )
+                })
                 .then(response => {
                     count = response.data.count;
                     dataFetched += response.data.results.length;
@@ -93,14 +90,10 @@ function App() {
     }
 
     return (
-        <div className="bg-slate-800 min-w-screen min-h-screen flex items-center justify-center">
+        <div className="bg-violet-300 min-w-screen min-h-screen flex items-center justify-center">
             {token === null && <InputToken setToken={submitToken} />}
-            {token !== null && shops !== null && shop == null && (
-                <ChooseShop shops={shops} setshop={setshop} />
-            )}
-            {shop !== null && data.length !== 0 && (
-                <Stats data={data} products={products} />
-            )}
+            {token !== null && shops !== null && shop == null && <ChooseShop shops={shops} setshop={setshop} />}
+            {shop !== null && data.length !== 0 && <Stats data={data} products={products} />}
         </div>
     );
 }

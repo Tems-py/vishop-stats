@@ -50,7 +50,7 @@ const GeneralStats = props => {
         <div className="flex flex-row gap-5 flex-wrap">
             <StatCardBig
                 text="Zarobiono"
-                value={earnings.toFixed(2) + "zł"}
+                value={calcData.toFixed(2) + "zł"}
                 bottom={voucherEarned.toFixed(2) + "zł z voucherów"}
             />
             <StatCardBig
@@ -64,7 +64,7 @@ const GeneralStats = props => {
                 bottom={(calcData / playersUnique.length).toFixed(2) + " zł/gracz"}
             />
             <button
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl text-wrap w-60 h-60 px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                className="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:ring-violet-300 font-medium rounded-lg text-xl text-wrap w-60 h-60 px-5 py-2.5 me-2 mb-2 dark:bg-violet-600 dark:hover:bg-violet-700 focus:outline-none dark:focus:ring-violet-800"
                 onClick={changeCountVouchers}
             >
                 {countingVouchers()}

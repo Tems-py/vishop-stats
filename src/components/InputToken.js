@@ -10,18 +10,18 @@ const InputToken = props => {
     return (
         <form
             onSubmit={handleSubmit}
-            className="w-max h-max bg-blue-500 p-5 rounded-md shadow-2xl text-black flex flex-col justify-center items-center gap-3"
+            className="w-max h-max bg-violet-500 p-5 rounded-md shadow-[300px] text-black flex flex-col justify-center items-center gap-3"
         >
             <input
                 type="text"
                 placeholder="Wklej token vishop"
-                className="bg-stone-400 p-1.5 rounded-md text-black placeholder:text-black"
+                className="bg-violet-400 p-1.5 rounded-md text-black placeholder:text-black"
                 name="token"
             />
             <input
                 type="submit"
                 value="Potwierdź"
-                className="bg-stone-400 p-1.5 rounded-md font-bold hover:bg-stone-500"
+                className="bg-violet-400 p-1.5 rounded-md font-bold hover:bg-violet-300 "
             />
         </form>
     );
