@@ -33,6 +33,11 @@ function App() {
             .then(response => {
                 setShops(response.data);
                 console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+                alert(`Błąd pobrania sklepów - ${error.message}`);
+                window.location.reload();
             });
     }
 
