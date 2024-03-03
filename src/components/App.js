@@ -3,6 +3,7 @@ import InputToken from "./InputToken";
 import axios from "axios";
 import Stats from "./stats/Stats";
 import ChooseShop from "./ChooseShop";
+import Loading from "./Loading";
 import "./App.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     const [products, setProducts] = useState([]);
     const [shops, setShops] = useState(null);
     const [shop, setShop] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const submitToken = token => {
         setToken(token);
@@ -18,9 +20,6 @@ function App() {
         setTimeout(() => {
             fetchShops(token);
         }, 300);
-        // setTimeout(() => {
-        //     fetchData(token);
-        // }, 300);
     };
 
     function fetchShops(token) {
@@ -53,6 +52,7 @@ function App() {
         let dataFetched = 0;
         let results = [];
         console.log(`fetching data from ${shop} using ${token}}`);
+        setLoading(true);
         const fetchPage = () => {
             axios
                 .get(`https://dev123.vishop.pl/panel/shops/${shop}/payments_history/`, {
@@ -77,6 +77,7 @@ function App() {
                     } else {
                         setData(results);
                         console.log(results);
+                        setLoading(false);
                     }
                 });
         };
@@ -99,6 +100,7 @@ function App() {
             {token === null && <InputToken setToken={submitToken} />}
             {token !== null && shops !== null && shop == null && <ChooseShop shops={shops} setshop={setshop} />}
             {shop !== null && data.length !== 0 && <Stats data={data} products={products} />}
+            {loading == true && <Loading />}
         </div>
     );
 }

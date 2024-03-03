@@ -4,6 +4,12 @@ import { useState } from "react";
 const InputToken = props => {
     function handleSubmit(event) {
         event.preventDefault();
+        if (event.target.elements.token.value === "") {
+            alert(`Niepoprawny token`);
+            window.location.reload();
+            return;
+        }
+
         props.setToken(event.target.elements.token.value);
     }
 
