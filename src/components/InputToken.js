@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 const InputToken = props => {
     function handleSubmit(event) {

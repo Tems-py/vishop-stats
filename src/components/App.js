@@ -100,7 +100,7 @@ function App() {
             {token === null && <InputToken setToken={submitToken} />}
             {token !== null && shops !== null && shop == null && <ChooseShop shops={shops} setshop={setshop} />}
             {shop !== null && data.length !== 0 && <Stats data={data} products={products} />}
-            {loading == true && <Loading />}
+            {loading === true && <Loading />}
         </div>
     );
 }
