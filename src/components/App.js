@@ -96,11 +96,13 @@ function App() {
     }
 
     return (
-        <div className="bg-violet-300 min-w-screen min-h-screen flex items-center justify-center">
-            {token === null && <InputToken setToken={submitToken} />}
-            {token !== null && shops !== null && shop == null && <ChooseShop shops={shops} setshop={setshop} />}
-            {shop !== null && data.length !== 0 && <Stats data={data} products={products} />}
-            {loading === true && <Loading />}
+        <div className="dark">
+            <div className="bg-violet-300 dark:bg-gray-800 min-w-screen min-h-screen flex items-center justify-center">
+                {token === null && <InputToken setToken={submitToken} />}
+                {token !== null && shops !== null && shop == null && <ChooseShop shops={shops} setshop={setshop} />}
+                {shop !== null && data.length !== 0 && <Stats data={data} products={products} />}
+                {loading === true && <Loading />}
+            </div>
         </div>
     );
 }
